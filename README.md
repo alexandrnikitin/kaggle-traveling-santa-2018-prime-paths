@@ -3,6 +3,10 @@ kaggle-traveling-santa-2018-prime-paths
 
 A short description of the project.
 
+```
+docker run -d -p 8888:8888 -v ~/kaggle-traveling-santa-2018-prime-paths:/home/jovyan/work/kaggle-traveling-santa-2018-prime-paths -e NB_UID=1000 -e GRANT_SUDO=yes --user root jupyter/datascience-notebook start-notebook.sh --NotebookApp.token=''
+```
+
 Project Organization
 ------------
 
