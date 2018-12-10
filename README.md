@@ -9,6 +9,9 @@ docker run -d -p 8888:8888 -v ~/kaggle-traveling-santa-2018-prime-paths:/home/jo
 kaggle competitions download -c traveling-santa-2018-prime-paths -p ./data/raw/
 unzip -j ./data/raw/'*.zip' -d ./data/raw/
 chmod 644 ./data/raw/*.csv
+
+gzip -k submission.csv
+kaggle competitions submit -c traveling-santa-2018-prime-paths -f submission.csv.gz -m "Message"
 ```
 
 Project Organization
