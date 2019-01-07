@@ -305,8 +305,9 @@ class DPSolver {
 
         // Fix city 0 at its original position.
         if (segment[next+1] == 0 && left_idx_ + last_pos != N - 1) continue;
-
-        dist_t cost = dp[mask ^ (1 << next)][next] + dist[last+1][next+1] + (penalized * dist[last+1][next+1]/10);
+        dist_t cost = dist[last+1][next+1];
+        cost += (penalized * cost/10);
+        cost += dp[mask ^ (1 << next)][next];
         if (cost < best) {
           best = cost;
         }
